@@ -1,12 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
+import GetCountries from "./components/GetCountries";
 
 function App() {
-  return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
-  );
+  return <GetCountries />;
 }
 
 export default App;

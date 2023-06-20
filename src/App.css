@@ -1,3 +1,48 @@
-.App {
-  text-align: center;
+body {
+  background-color: #e2ffe3;
 }
+
+.container {
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 5px;
+}
+
+.search-input {
+  border: none;
+  padding: 5px;
+  outline: none;
+}
+
+.search-icon {
+  cursor: pointer;
+}
+.filters {
+  background-color: #8eff8f;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.country-item {
+  background-color: #8eff8f;
+  padding: 2%;
+  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Rest of your existing styles can be added below */
