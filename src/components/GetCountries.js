@@ -17,7 +17,7 @@ function GetCountries() {
   const fetchCountries = async () => {
     try {
       const response = await axios.get(
-        "https://restcountries.com/v2/all?fields=name,region,area,languages,flags"
+        "https://restcountries.com/v2/all?fields=name,region,area,languages,flags,population"
       );
       const data = response.data;
       setCountries(data);
@@ -90,7 +90,7 @@ function GetCountries() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Countries</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">Countries</h1>
       <div className="title-container mb-4">
         <div className="search-container rounded flex">
           <input
@@ -105,7 +105,7 @@ function GetCountries() {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between mb-4 gap-4">
+      <div className="flex flex-wrap justify-between mb-10 gap-4">
         <div>
           <label className="mr-2">Sort by:</label>
           <select
@@ -133,26 +133,33 @@ function GetCountries() {
       {/* Displaying list */}
       <ul className="flex flex-wrap justify-evenly gap-20">
         {currentCountries.map((country) => (
-          <div className="border-2 border-current	p-10 demo w-72 flex flex-col gap-4 ">
-            <div>
-              <li key={country.name} className="mb-2 ">
+          <div
+            key={country.name}
+            className="group h-72 w-72 [perspective:1000px]"
+          >
+            <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              <div className="absolute inset-0">
                 {country.flags && (
                   <img
                     src={country.flags.png}
                     alt={country.name}
-                    className="w-16 h-16 rounded-full mr-2"
+                    className="max-h-full rounded-t-lg object-cover shadow-xl shadow-black/40 [transform:rotateY(180deg)]"
                   />
                 )}
-              </li>
-            </div>
-            <div>
-              <li className="font-bold">{country.name}</li>
-            </div>
-            <div>
-              <li className="text-gray-600">Region: {country.region}</li>
-            </div>
-            <div>
-              <li className="text-gray-600">Area: {country.area}</li>
+                <div className="absolute bottom-4 right-4 ">
+                  <p className="[transform:rotateY(180deg)]">
+                    Population: {country.population}
+                  </p>
+                </div>
+              </div>
+
+              <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform-rotateY(180deg)] [backface-visibility:hidden]">
+                <div className="flex min-h-full flex-col items-center justify-center">
+                  <h1 className="text-3xl font-bold">{country.name}</h1>
+                  <p className="text-lg">Region: {country.region}</p>
+                  <p className="text-base">Area: {country.area}</p>
+                </div>
+              </div>
             </div>
           </div>
         ))}

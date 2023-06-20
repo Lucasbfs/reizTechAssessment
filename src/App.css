@@ -1,5 +1,5 @@
 body {
-  background-color: #e2ffe3;
+  background-color: #f5f5f8;
 }
 
 .container {
@@ -33,13 +33,13 @@ body {
   cursor: pointer;
 }
 .filters {
-  background-color: #8eff8f;
+  background-color: #e2f0fc;
   padding: 5px;
   border-radius: 10px;
 }
 
 .country-item {
-  background-color: #8eff8f;
+  background-color: #e2f0fc;
   padding: 2%;
   margin-bottom: 10px;
   margin-bottom: 20px;
