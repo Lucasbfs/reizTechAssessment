@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FiSearch } from "react-icons/fi";
 import ListCountries from "./ListCountries";
 import SearchInput from "./SearchInput";
 import ErrorMessage from "./ErrorMessage";
